@@ -1,4 +1,4 @@
-## One-time Setup
+## One-time Setup yes
 1. Install VS Code, if you don't already have it: https://code.visualstudio.com/Download
 
    Obviously, you can just open it up now, if you already have it installed.
