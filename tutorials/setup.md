@@ -5,9 +5,10 @@
 
 2. Install the "Extension Pack for Java" extension by Microsoft in VS Code.
    
-   Install new extensions by clicking on the “Extensions” tab on the left sidebar.
+   Install new extensions by clicking
+    on the “Extensions” tab on the left sidebar.
 
-3. Install OpenJDK.
+4. Install OpenJDK.
 
    *Running* Java applications requires one type of installation, a JRE ("Java Runtime Environment").
    But for this course, we need to install the language itself, in a JDK ("Java Development Kit").
@@ -21,9 +22,9 @@
 
    Once you’ve installed the Java language, restart VS Code so the PATH variable changes take effect.
 
-4. Create a GitHub account with your Holy Cross email, if you don't already have one: https://github.com/
+5. Create a GitHub account with your Holy Cross email, if you don't already have one: https://github.com/
 
-5. Fork my repository.
+6. Fork my repository.
    
    To "fork" a repository is to create a controlled copy on your own account.
    GitHub is able to facilitate the process of coordinating changes between forked repositories and the originals, but in this case, we just want the easy copy feature.
@@ -35,7 +36,7 @@
    You'll see it takes you to *my* repository's documentation.
    Our goal in this tutorial is to fix that.
 
-6. Verify that GitHub pages deploys from branch "gh-pages".
+7. Verify that GitHub pages deploys from branch "gh-pages".
 
    This repository is set up with "continuous integration" to automatically deploy documentation for all the code you write.
    GitHub hosts this documentation using its "GitHub Pages" feature.
@@ -48,13 +49,13 @@
 
    Please let me know asap if you get stuck here, because if you get stuck, so will everyone else!
 
-7. Install git, if you don't already have it: https://git-scm.com/
+8. Install git, if you don't already have it: https://git-scm.com/
 
    This is the command-line tool we are going to use both for *version control* and to facilitate the transfer of files between your local computer, which you can edit easily in VS Code, and your GitHub repository, where I can see them and give feedback.
 
    Like when installing the JDK, I believe the default installation options are good, but make sure it is configured to update your PATH variable, so that the git command is accessible from anywhere on your computer.
 
-8. Configure git with some required metadata, if you've never used it before with your Holy Cross account.
+9. Configure git with some required metadata, if you've never used it before with your Holy Cross account.
 
    Inside VS Code, open up an *integrated terminal* - you're going to use this feature all the time, in this course.
    The ctrl-` hotkey usually works.
@@ -70,7 +71,7 @@
    - When you see the "$" symbol at the start of a line in instructions, it indicates that this is the start of a new line in a command prompt. You don't actually type it.
    - Please replace the contents within quotation marks with your own GitHub username and email.
 
-9. Clone your fork.
+10. Clone your fork.
 
    To "clone" a repository is to copy it from a location "upstream" on the Internet (i.e. GitHub) to your local computer.
    
@@ -89,7 +90,7 @@
 
    This command creates a new directory on your computer and then downloads the contents of your GitHub repository to that directory.
 
-10. Open your project directory in VS Code.
+11. Open your project directory in VS Code.
 
     The right way to use VS Code is to have an entire folder open, so that you can use the VS Code file explorer to easily switch between files.
 
@@ -99,7 +100,7 @@
     If you are using a mac, there *is* a way to get a context menu option, but it's complicated.
     Look it up if you're interested, or ask me for help during office hours sometime.
 
-11. Open your README.md file in VS Code.
+12. Open your README.md file in VS Code.
 
     The `.md` extension stands for "Markdown", a type of markup language, similar to HTML but designed to be very human-readable.
     You should be able to easily see how the syntax you see in VS Code translates to the readme you see in GitHub.
@@ -110,7 +111,7 @@
     It still takes you to *my* documentation page.
     It's time to fix that.
 
-12. Edit the README.md file to correct the links in the [Stable] and [GitHub Actions CI] badges.
+13. Edit the README.md file to correct the links in the [Stable] and [GitHub Actions CI] badges.
     
     You'll just need to replace my username "ksherbert-hcc" with yours.
     Be sure you do it for both "badges".
