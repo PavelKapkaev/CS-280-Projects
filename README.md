@@ -1,12 +1,11 @@
 ## CS-280-Projects yo 
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ksherbert-hcc.github.io/CS-280-Projects/)
-[![GitHub Actions CI](https://github.com/ksherbert-hcc/CS-280-Projects/actions/workflows/CI.yml/badge.svg)](https://github.com/ksherbert-hcc/CS-280-Projects/actions/workflows/CI.yml?query=branch%3Amain)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://PavelKapkaev.github.io/CS-280-Projects/)
+[![GitHub Actions CI](https://github.com/PavelKapkaev/CS-280-Projects/actions/workflows/CI.yml/badge.svg)](https://github.com/PavelKapkaev/CS-280-Projects/actions/workflows/CI.yml?query=branch%3Amain)
 
 This is the starter package for the Holy Cross College CS 280 Data Structures course.
 
 ## Folder Structure
-
 Any Java workspace contains the following folders:
 - `src`: contains your source code in `.java` files. Normally, the files in this folder are the only ones you ever need to modify manually.
 - `lib`: contains external dependencies, in the form of .jar files. For this class, you will be making use of the code at [this repository](https://github.com/ksherbert-hcc/AbstractDataTypes).
