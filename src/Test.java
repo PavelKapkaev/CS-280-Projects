@@ -34,6 +34,8 @@ public class Test {
         KeyValuePair.main(args);
         /* Call additional main routines as you create new data strutures. */
 
+        BubbleSort.main(args);
+
         return true;
     }
 }
