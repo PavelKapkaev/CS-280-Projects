@@ -37,7 +37,7 @@ public class InsertionSort extends SortingAlgorithm {
   private void swap(Integer[] array, int i, int j) {
     Integer temp = array[i];
     array[i] = array[j];
-    array[j] = temp;;
+    array[j] = temp;
 
   }
   
