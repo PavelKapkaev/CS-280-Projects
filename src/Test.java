@@ -37,6 +37,13 @@ public class Test {
         BubbleSort.main(args);
         /* Bubble sort soritng algorithm */
 
+        InsertionSort.main(args);
+        /* Insertoin sort soritng algorithm */
+
+
+        SelectionSort.main(args);
+        /* Selection sort soritng algorithm */
+
         
         return true;
     }
