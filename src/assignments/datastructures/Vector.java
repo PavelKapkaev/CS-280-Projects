@@ -35,7 +35,7 @@ public class Vector<T> implements List<T> {
      * @return the number of items
      */
     public int length() {
-        return size; 
+        return size; // Return the number of items in the vector.
     }
     
     /**
@@ -45,9 +45,9 @@ public class Vector<T> implements List<T> {
      */
     public T at(int index) {
         // You may use assert statements to enforce pre-conditions at runtime.
-        assert 0 <= index && index < this.size;
+        assert 0 <= index && index < this.size; // Make sure the index is valid.
 
-        return array[index];
+        return array[index]; // Return the items at that index.
     }
     
     /**
@@ -57,9 +57,9 @@ public class Vector<T> implements List<T> {
      */
     public void set(int index, T value) {
         // You may use assert statements to enforce pre-conditions at runtime.
-        assert 0 <= index && index < this.size;
+        assert 0 <= index && index < this.size; // Make sure the index is valid.
 
-        array[index] = value;
+        array[index] = value; // Replace the item at that index.
     }
     
     /**
@@ -68,7 +68,12 @@ public class Vector<T> implements List<T> {
      * @return true iff the collection contains value
      */
     public boolean contains(T value) {
-        // TODO implement this method
+        for (int i =0; i < size; ++i) { // Check every item for the value.
+            if (array[i].equals(value)) {
+                return true;
+            }
+        }
+        return false; // If the item was not found.
     }
     
     /**
@@ -79,9 +84,19 @@ public class Vector<T> implements List<T> {
     public void insert(int index, T value) {
         // You may use assert statements to enforce pre-conditions at runtime.
         // Note this function has a somewhat different pre-condition!
-        assert 0 <= index && index <= this.size;
+        assert 0 <= index && index <= this.size; // Make sure the index is valid.
 
-        // TODO implement this method
+        if (size == array.length) { // Extend the array if needed.
+            resize(2 * array.length);
+
+        } 
+
+        for (int i = size - 1; i >= index; i--) { // Move all items to the right.
+            array[i+1] = array [i];
+        }    
+        array[index] = value; // Add new item.
+        size = size + 1;
+
     }
     
     /**
@@ -91,9 +106,16 @@ public class Vector<T> implements List<T> {
      */
     public T delete(int index) {
         // You may use assert statements to enforce pre-conditions at runtime.
-        assert 0 <= index && index < this.size;
+        assert 0 <= index && index < this.size; // Make sure the index is valid.
 
-        // TODO implement this method
+        T removed = array[index]; // Save item before removing it.
+
+        for (int i = index; i < size - 1; i++ ) { // Move items to the left.
+            array[i] = array[i+1];
+        }
+        array[size-1] = null; // Delete the old item at the end.
+        size = size -1; // Make the size smaller.
+        return removed; // Return removed item.
     }
 
     /**
@@ -105,7 +127,12 @@ public class Vector<T> implements List<T> {
      */
     @SuppressWarnings("unchecked")
     private void resize(int newSize) {
-        // TODO implement this method. Take inspiration from the constructor implementation.
+        T[] newArray = (T[])(new Object[newSize]); // Make array that is bigger.
+        for (int i = 0; i < size; i++) { // Copy from old to new Array.
+            newArray[i] = array[i];
+        }
+        array = newArray; // Use new array.
+
     }
 
     /**

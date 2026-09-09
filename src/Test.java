@@ -44,6 +44,10 @@ public class Test {
         SelectionSort.main(args);
         /* Selection sort soritng algorithm */
 
+        Vector.main(args);
+        /* Vector assignment */
+
+
         
         return true;
     }
