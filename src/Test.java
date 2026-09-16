@@ -47,7 +47,11 @@ public class Test {
         Vector.main(args);
         /* Vector assignment */
 
+        LinkedList.main(args);
+        /* Linked List assignment */
 
+
+        
         
         return true;
     }
