@@ -1,5 +1,7 @@
 package assignments.datastructures;
 
+import java.util.Iterator;
+
 import adt.List;
 
 /// An extensible list backed by an array buffer.
@@ -13,7 +15,7 @@ import adt.List;
 /// This is a very expensive operation, so you want to make sure it occurs very infrequently.
 /// 
 /// @param <T> the type of each element
-public class Vector<T> implements List<T> {
+public class Vector<T> implements List<T>, Iterable<T> {
     /** The initial amount of buffer space in a newly-created vector. */
     public static final int INITIAL_BUFFER_SIZE = 10;
     private T[] array;
@@ -46,7 +48,6 @@ public class Vector<T> implements List<T> {
     public T at(int index) {
         // You may use assert statements to enforce pre-conditions at runtime.
         assert 0 <= index && index < this.size; // Make sure the index is valid.
-
         return array[index]; // Return the items at that index.
     }
     
@@ -58,7 +59,6 @@ public class Vector<T> implements List<T> {
     public void set(int index, T value) {
         // You may use assert statements to enforce pre-conditions at runtime.
         assert 0 <= index && index < this.size; // Make sure the index is valid.
-
         array[index] = value; // Replace the item at that index.
     }
     
@@ -85,12 +85,9 @@ public class Vector<T> implements List<T> {
         // You may use assert statements to enforce pre-conditions at runtime.
         // Note this function has a somewhat different pre-condition!
         assert 0 <= index && index <= this.size; // Make sure the index is valid.
-
         if (size == array.length) { // Extend the array if needed.
             resize(2 * array.length);
-
         } 
-
         for (int i = size - 1; i >= index; i--) { // Move all items to the right.
             array[i+1] = array [i];
         }    
@@ -118,6 +115,16 @@ public class Vector<T> implements List<T> {
         return removed; // Return removed item.
     }
 
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            int cursor = 0;
+            public boolean hasNext() {return cursor < size;}
+            public T next() {T value = array[cursor]; cursor++; return value;}
+        };
+    }
+
+
+
     /**
      * Resize the internal buffer array.
      * 
@@ -141,6 +148,14 @@ public class Vector<T> implements List<T> {
      */
     public static void main(String[] args) {
         List.validate(new Vector<>());
+
+        // Test iterator.
+        Vector<Integer> vector = new Vector<>();
+        for (int i = 0; i < INITIAL_BUFFER_SIZE; i ++) vector.insert(0, i);
+        Iterator<Integer> iter = vector.iterator();
+        for (int i = INITIAL_BUFFER_SIZE; i > 0; i --) assert iter.next().equals(i-1);
+        assert !iter.hasNext();
+
         System.out.println("Vector passes all tests.");
     }
     

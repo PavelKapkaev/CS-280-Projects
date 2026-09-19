@@ -1,4 +1,5 @@
 package assignments.datastructures;
+import java.util.Iterator;
 
 import adt.List;
 
@@ -14,7 +15,7 @@ import adt.List;
 ///  one must first traverse through the chain of nodes from the beginning of the list.
 /// 
 /// @param <T> the type of each element
-public class LinkedList<T> implements List<T> {
+public class LinkedList<T> implements List<T>, Iterable<T> {
     private Node head;
     private int size;
 
@@ -146,12 +147,29 @@ public class LinkedList<T> implements List<T> {
         }
     }
 
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            Node cursor = head;
+            public boolean hasNext() {return cursor != null;}
+            public T next() {T value = cursor.data; cursor = cursor.link; return value; }
+        };
+
+    }
+
     /**
      * Run validation tests.
      * @param args command-line args
      */
-    public static void main(String[] args) {
+      public static void main(String[] args) {
         List.validate(new LinkedList<>());
+
+        // Test iterator.
+        LinkedList<Integer> list = new LinkedList<>();
+        for (int i = 0; i < 5; i ++) list.insert(0, i);
+        Iterator<Integer> iter = list.iterator();
+        for (int i = 5; i > 0; i --) assert iter.next().equals(i-1);
+        assert !iter.hasNext();
+
         System.out.println("LinkedList passes all tests.");
-    }
+      }
 }
