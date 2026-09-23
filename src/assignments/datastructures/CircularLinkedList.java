@@ -154,17 +154,19 @@ public class CircularLinkedList<T> implements List<T>, Iterable<T> {
   * @return iterator for this Circular Linked List
   */
   public Iterator<T> iterator() {
+    Node first = tail.link;
     return new Iterator<T>() {
-        Node cursor = tail; // Keeps track of the current node.
+        Node cursor = first; // Keeps track of the current node.
         int count = 0; // Keeps track of how many nodes were visited.
         int iSize = size; // Save the size when the iterator is created.
         public boolean hasNext() {
             return count < iSize; // Check if there are more nodes.
         }
         public T next() {
+            T value = cursor.data;
             cursor = cursor.link; // Move cursor to the next node.
             count++; // Increase.
-            return cursor.data; // Return the value from the current node.
+            return value; // Return the value from the current node.
         }
     };
   }

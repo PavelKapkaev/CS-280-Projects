@@ -40,7 +40,6 @@ public class Test {
         InsertionSort.main(args);
         /* Insertoin sort soritng algorithm */
 
-
         SelectionSort.main(args);
         /* Selection sort soritng algorithm */
 
@@ -50,9 +49,9 @@ public class Test {
         LinkedList.main(args);
         /* Linked List assignment */
 
+        CircularLinkedList.main(args);
+        /* Circular Linked List assignment */
 
-        
-        
         return true;
     }
 }
