@@ -1,7 +1,8 @@
 package assignments.datastructures;
 import java.util.Iterator;
-
 import adt.List;
+import adt.Stack;
+
 
 /// An extensible list backed by a chain of nodes.
 /// 
@@ -15,7 +16,7 @@ import adt.List;
 ///  one must first traverse through the chain of nodes from the beginning of the list.
 /// 
 /// @param <T> the type of each element
-public class LinkedList<T> implements List<T>, Iterable<T> {
+public class LinkedList<T> implements List<T>, Iterable<T>, Stack<T> {
     private Node head;
     private int size;
 
@@ -147,21 +148,63 @@ public class LinkedList<T> implements List<T>, Iterable<T> {
         }
     }
 
+
+    /**
+     * Creates iterator that will go through each value in the Linked List.
+     *@return iterator for this Linked List
+     */
     public Iterator<T> iterator() {
         return new Iterator<T>() {
-            Node cursor = head;
-            public boolean hasNext() {return cursor != null;}
-            public T next() {T value = cursor.data; cursor = cursor.link; return value; }
+            Node cursor = head; //keeps track of a node.
+            public boolean hasNext() {return cursor != null;} // Check if there are more nodes.
+            public T next() {T value = cursor.data; cursor = cursor.link; return value; } // Gets a value and moves to the next node.
         };
 
     }
 
+    /** 
+     * Check if stack is empty.
+     * @return true if empty
+     */
+    public boolean isEmpty() {
+      return size == 0; //If size is 0, there are no nodes in the stack.
+    }
+
+    /**
+     * Return value at the top of the stack, no removing.
+     * @return value at the top of the stack
+     */
+    public T peek() {
+      return head.data;
+    }
+
+    /**
+     *  Remove and return the value at the top of the stack.
+     * @return value removed from the stack
+     */
+    public T pop() {
+      T value = head.data; // Save the value from the head.
+      head = head.link; // Move head to the next node.
+      size--; // Make the size smaller after removing a node.
+      return value; // Return the value that was removed.
+    }
+
+    /**
+     * Add a value to the top of the stack.
+     * @param value value to add
+     */
+    public void push(T value) {
+      head = new Node(value, head); // Create a new node and make it the new head.
+      size ++; // Increase the size after adding a node.
+    }
+    
     /**
      * Run validation tests.
      * @param args command-line args
      */
       public static void main(String[] args) {
         List.validate(new LinkedList<>());
+        Stack.validate(new LinkedList<>());
 
         // Test iterator.
         LinkedList<Integer> list = new LinkedList<>();

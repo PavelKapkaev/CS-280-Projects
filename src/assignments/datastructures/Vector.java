@@ -1,7 +1,6 @@
 package assignments.datastructures;
-
 import java.util.Iterator;
-
+import adt.Stack;
 import adt.List;
 
 /// An extensible list backed by an array buffer.
@@ -15,7 +14,7 @@ import adt.List;
 /// This is a very expensive operation, so you want to make sure it occurs very infrequently.
 /// 
 /// @param <T> the type of each element
-public class Vector<T> implements List<T>, Iterable<T> {
+public class Vector<T> implements List<T>, Iterable<T>, Stack<T> {
     /** The initial amount of buffer space in a newly-created vector. */
     public static final int INITIAL_BUFFER_SIZE = 10;
     private T[] array;
@@ -114,16 +113,57 @@ public class Vector<T> implements List<T>, Iterable<T> {
         size = size -1; // Make the size smaller.
         return removed; // Return removed item.
     }
-
+    /**
+     * Cretate an iterator that will go through each item in the vector.
+     * 
+     * @return iterator that goes through this vector
+     */
     public Iterator<T> iterator() {
         return new Iterator<T>() {
-            int cursor = 0;
-            public boolean hasNext() {return cursor < size;}
-            public T next() {T value = array[cursor]; cursor++; return value;}
+            int cursor = 0;// Keeps trach of positioin. 
+            public boolean hasNext() {return cursor < size;} // Checks if there are more values.
+            public T next() {T value = array[cursor]; cursor++; return value;} // Gets value and moves to the next one.
         };
     }
 
+    /** 
+     * Check if stack is empty.
+     * @return true if empty
+     */
+    public boolean isEmpty() {
+        return size == 0; // If size is 0, no values in the stack.
+    }
+    
+    /**
+     * Return value at the top of the stack, no removing.
+     * @return value at the top of the stack
+     */
+    public T peek() {
+        return array[size-1];  // Return the value at the top.
+    }
+    
+    /**
+     *  Remove and return the value at the top of the stack.
+     * @return value removed from the stack
+     */
+    public T pop() {
+        T value = array[size - 1]; // Save the value at the top of the stack.
+        array[size - 1] = null; // Remove the value from the array.
+        size--; // Decrease size after.
+        return value; // Return value.
+    }
 
+    /**
+     * Add a value to the top of the stack.
+     * @param value value to add
+     */
+    public void push(T value) {
+        if (size == array.length) { // Make more space, if full.
+            resize(array.length * 2);
+        }
+        array[size] = value; // Add new value to the top of the stack.
+        size++; // Increase size after.
+    }
 
     /**
      * Resize the internal buffer array.
@@ -148,6 +188,8 @@ public class Vector<T> implements List<T>, Iterable<T> {
      */
     public static void main(String[] args) {
         List.validate(new Vector<>());
+        Stack.validate(new Vector<>());
+
 
         // Test iterator.
         Vector<Integer> vector = new Vector<>();
