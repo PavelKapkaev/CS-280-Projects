@@ -1,13 +1,14 @@
 package assignments.datastructures;
 import java.util.Iterator;
 import adt.List;
+import adt.Queue;
 
 
 
 /// An extensible circular list backed by a chain of nodes.
 /// Create an empty circular linked list.
 /// @param <T> the type of each element
-public class CircularLinkedList<T> implements List<T>, Iterable<T> {
+public class CircularLinkedList<T> implements List<T>, Iterable<T>, Queue<T> {
     private Node tail;
     private int size;
     public CircularLinkedList() { 
@@ -171,13 +172,45 @@ public class CircularLinkedList<T> implements List<T>, Iterable<T> {
     };
   }
 
-    
+  /**  (non-Javadoc)
+   * Remove an item from a queue.
+   * @return value that was removed
+   */
+  public T dequeue() {
+    return delete(0);
+  }
+
+  /**
+   *Add an item to a queue.
+   *@param value value to add
+   */
+  public void enqueue(T value) {
+    insert(size, value);
+  }
+
+  /**  (non-Javadoc)
+   * Check if the collection is empty.
+   * @return true iff the collection is empty
+   */
+  public boolean isEmpty() {
+    return size == 0;
+  }
+
+  /**  (non-Javadoc)
+   * Next item to be removed from te queue.
+   * @return next value to be dequeued
+   */
+  public T peek() {
+    return at(0);
+  }
+  
   /**
   * Run validation tests.
   * @param args command-line args
   */
   public static void main(String[] args) {
     List.validate(new CircularLinkedList<>());
+    Queue.validate(new CircularLinkedList<>());
     
     // Test iterator.
     CircularLinkedList<Integer> list = new CircularLinkedList<>();
