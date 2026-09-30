@@ -52,6 +52,12 @@ public class Test {
         CircularLinkedList.main(args);
         /* Circular Linked List assignment */
 
+        QuickSort.main(args);
+        /* QuickSort soring algorithm */
+
+        MergeSort.main(args);
+        /* QuickSort soring algorithm */
+
         return true;
     }
 }
