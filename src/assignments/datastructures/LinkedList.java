@@ -151,7 +151,7 @@ public class LinkedList<T> implements List<T>, Iterable<T>, Stack<T> {
 
     /**
      * Creates iterator that will go through each value in the Linked List.
-     *@return iterator for this Linked List
+     * @return iterator for this Linked List
      */
     public Iterator<T> iterator() {
         return new Iterator<T>() {
@@ -179,7 +179,7 @@ public class LinkedList<T> implements List<T>, Iterable<T>, Stack<T> {
     }
 
     /**
-     *  Remove and return the value at the top of the stack.
+     * Remove and return the value at the top of the stack.
      * @return value removed from the stack
      */
     public T pop() {

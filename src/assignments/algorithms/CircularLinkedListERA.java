@@ -2,6 +2,11 @@ package assignments.algorithms;
 import assignments.datastructures.CircularLinkedList;
 
 public class CircularLinkedListERA {
+    /**
+     * Create a circular linked list with N values.
+     * @param N number of values in the list
+     * @return created circular linked list
+     */
     private static CircularLinkedList<Integer> list(int N) { // Create list with N values.
         CircularLinkedList<Integer> list = new CircularLinkedList<Integer>(); // Create a new list.
         for (int i = 0; i < N; i++) { // Add N values to the lsit.
@@ -10,6 +15,11 @@ public class CircularLinkedListERA {
         return list;
     }
 
+
+    /**
+     * Test the runtime of prepending to a circular linked list.
+     * @param args arguments given to the program
+     */
     public static void main(String[] args) {
         for (int N = 10000; N <= 1000000; N += 10000) { // Test different values of N.
             CircularLinkedList<Integer> list = list(N); // Create the lsit.

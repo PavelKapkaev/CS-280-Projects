@@ -1,10 +1,19 @@
 package assignments.sorting;
 
 public class QuickSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
+  /**  
+   * Sort array using quick sort.
+   * @param array array to sort
+   */
   public void sort(T[] array) { // Sort the array.
     mySort(array, 0, array.length - 1); // Start at first index and go to last.
   }
-  // Sort from left to right.
+  /**
+   * Sort from left to right.
+   * @param array array to sort
+   * @param left first index
+   * @param right second index
+   */
   private void mySort(T[] array, int left, int right){
     if (left < right) { // Check if there are any values to sort.
       T pivot = array[right]; // Last value is the pivot.
@@ -26,8 +35,8 @@ public class QuickSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
     /**
    * Swap two elements within array.
    * @param array the array to swap value in
-   * @param i
-   * @param j
+   * @param i first value index
+   * @param j second value index
   */
   private void swap(T[] array, int i, int j) {
     T temp = array[i];
@@ -35,7 +44,10 @@ public class QuickSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
     array[j] = temp;
 
   }
-
+  /** 
+   * Test
+   * @param args given to program
+   */
   public static void main(String[] args) {
     SortingAlgorithm.validate(new QuickSort<>());
     System.out.println("QuickSort has passed all tests.");

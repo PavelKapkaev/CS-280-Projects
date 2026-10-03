@@ -1,7 +1,13 @@
 package assignments.algorithms;
 
-public class Binets {
 
+
+public class Binets {
+    /**
+     * Calculate fibonacci number using Binet's formula.
+     * @param n Fibonacci number position
+     * @return alculated Fibonacci number
+     */
     public static double binets(int n) {
         double sqrt5 = Math.sqrt(5);
         double p = (1+sqrt5) / 2;
@@ -11,6 +17,10 @@ public class Binets {
         return answer;
     }
 
+    /**
+     * Test the runtime of Binet's formula.
+     * @param args arguments given to the program
+     */
     public static void main(String[] args) {
         for (int N = 10000000; N <= 1000000000; N += 10000000) {
           long start = System.nanoTime();

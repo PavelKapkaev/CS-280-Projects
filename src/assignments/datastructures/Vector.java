@@ -114,7 +114,7 @@ public class Vector<T> implements List<T>, Iterable<T>, Stack<T> {
         return removed; // Return removed item.
     }
     /**
-     * Cretate an iterator that will go through each item in the vector.
+     * Create an iterator that will go through each item in the vector.
      * 
      * @return iterator that goes through this vector
      */

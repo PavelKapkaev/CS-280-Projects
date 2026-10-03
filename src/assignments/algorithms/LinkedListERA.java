@@ -2,6 +2,11 @@ package assignments.algorithms;
 import assignments.datastructures.LinkedList;
 
 public class LinkedListERA {
+    /**
+     * Create a linked list with N values.
+     * @param N number of values in the list
+     * @return created linked list
+     */
     private static LinkedList<Integer> linkedlist(int N) { // Linked list with N values.
         LinkedList<Integer> llist = new LinkedList<Integer>(); // New list.
         for (int i = 0; i < N; i++) { // Add N values to the lsit.
@@ -10,6 +15,10 @@ public class LinkedListERA {
         return llist;
     }
 
+    /**
+     * Test the runtime of prepending to a linked list.
+     * @param args arguments given to the program
+     */
     public static void main(String[] args) {
         for (int N = 10000; N <= 1000000; N += 10000) { // Different values of N.
             LinkedList<Integer> list = linkedlist(N); // Create lsit.
