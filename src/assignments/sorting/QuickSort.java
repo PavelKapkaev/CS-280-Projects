@@ -12,12 +12,12 @@ public class QuickSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
    * Sort from left to right.
    * @param array array to sort
    * @param left first index
-   * @param right second index
+   * @param right last index
    */
   private void mySort(T[] array, int left, int right){
     if (left < right) { // Check if there are any values to sort.
       T pivot = array[right]; // Last value is the pivot.
-      int small = left; // Index for smallest value.
+      int small = left; // Position for smallest value.
       for (int i = left; i < right; i++) { // Go through all values.
         if (array[i].compareTo(pivot) < 0){ // Check if value smaller than the pivot.
           swap(array, i, small); // Move smaller value left. 

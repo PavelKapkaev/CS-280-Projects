@@ -1,7 +1,11 @@
 package assignments.algorithms;
 
 public class Fibonacci {
-
+    /**
+     * Calculate a Fibonacci number.
+     * @param n Fibonacci number position
+     * @return calculated Fibonacci number
+     */
     public static int fibonacci(int n) {
         if (n <= 1)
             return 1;
@@ -19,6 +23,10 @@ public class Fibonacci {
         return answer;
     }
 
+    /**
+     * Test the runtime of the Fibonacci method.
+     * @param args arguments given to the program
+     */
     public static void main(String[] args) {
         for (int N = 10000000; N <= 1000000000; N += 10000000) {
           long start = System.nanoTime();

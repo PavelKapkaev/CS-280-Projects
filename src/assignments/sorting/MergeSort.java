@@ -5,35 +5,40 @@ public class MergeSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
    * Sort the array using merge sort.
    * @param array array to sort.
    */
-  public void sort(T[] array) {// Sort the array.
-    mySort(array, 0, array.length - 1); // Start at first index and go to last.
+  public void sort(T[] array) {
+    T[] temporary = (T[]) new Comparable[array.length]; // Array used for sorting.
+    mySort(array, temporary, 0, array.length - 1); // Starts at the first index and goes to last.
   }
+
 
   /**
    * Divide the array into small parts and sort them.
    * @param array array sorted
    * @param left first index
    * @param right last index
+   * @param temporary temporary array
    */
-  private void mySort(T[] array, int left, int right) { // Divide the array to smaller parts
+  private void mySort(T[] array, T[] temporary, int left, int right) { // Divide the array to smaller parts
     if (left < right) { // Continue while there is more than 1 value.
         int middle = (left + right) / 2; // Find the middle.
-        mySort(array, left, middle); //Divide left part.
-        mySort(array, middle + 1, right); // Divide right part.
-        merge(array, left, middle, right); // Merge left and right.
+        mySort(array, temporary, left, middle); //Divide left part.
+        mySort(array, temporary, middle + 1, right); // Divide right part.
+        merge(array, temporary, left, middle, right); // Merge left and right.
     }
   }
 
   /**
    * Merge sorted parts back together.
    * @param array array sorted
+   * @param temporary temporary array
    * @param left first index
    * @param middle middle index
    * @param right last index
    */
-  private void merge(T[] array, int left, int middle, int right) { // To merge two parts together.
-
-    T[] temporary = java.util.Arrays.copyOf(array, array.length); // I copied the array to a temporary array here.
+  private void merge(T[] array, T[] temporary, int left, int middle, int right) { // To merge two parts together.
+    for (int x = left; x <= right; x++) {
+        temporary[x] = array[x];
+    }
     int i = left;
     int j = middle + 1; // +1 to start the right side.
     int k = left;
