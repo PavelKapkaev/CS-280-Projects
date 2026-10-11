@@ -58,6 +58,9 @@ public class Test {
         MergeSort.main(args);
         /* QuickSort soring algorithm */
 
+        BinarySearchTree.main(args);
+        /*Binary Search Tree assignment */
+
         return true;
     }
 }
