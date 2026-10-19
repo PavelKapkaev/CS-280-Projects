@@ -61,6 +61,15 @@ public class Test {
         BinarySearchTree.main(args);
         /*Binary Search Tree assignment */
 
+        AVLTree.main(args);
+        /*Binary Search Tree assignment */
+
+        PriorityEnqueuer.main(args);
+        /*Binary Search Tree assignment */
+    
+        PriorityDequeuer.main(args);
+        /*Binary Search Tree assignment */
+
         return true;
     }
 }
