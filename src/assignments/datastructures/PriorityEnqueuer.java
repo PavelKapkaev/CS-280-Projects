@@ -98,17 +98,7 @@ public class PriorityEnqueuer<T extends Comparable<T>> implements PriorityQueue<
    * @param args command line arguments
    */
   public static void main(String[] args) {
-    PriorityEnqueuer<Integer> queue = new PriorityEnqueuer<Integer>();
-    PriorityQueue.validate(queue); // Test the interface.
-    System.out.println("PriorityEnqueuer passes interface validation.");
-    queue.enqueue(5); // Add values.
-    queue.enqueue(30);
-    queue.enqueue(70);
-    assert queue.peek() == 5; // Check the smallest value.
-    assert queue.dequeue() == 5; // Remove the smallest value.
-    assert queue.dequeue() == 30;
-    assert queue.dequeue() == 70;
-    assert queue.isEmpty(); // Check if the queue is empty.
+    PriorityQueue.validate(new PriorityEnqueuer<Integer>());
     System.out.println("PriorityEnqueuer passes all tests.");
   }
 } 

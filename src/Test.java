@@ -70,6 +70,9 @@ public class Test {
         PriorityDequeuer.main(args);
         /*Binary Search Tree assignment */
 
+        MinHeap.main(args);
+        /*MinHeap assignment */
+
         return true;
     }
 }
