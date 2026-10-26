@@ -210,7 +210,6 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
      * @return true if added, false if exists
      */
     public boolean add(T value) {
-        if (contains(value)) return false; // Value already exists.
         root = add(value, root); // Start at the root.
         return true; // Value added.
     }
@@ -225,7 +224,7 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
         if (node == null) return new Node(value); // Create new node.
         int compareResult = value.compareTo(node.data); // Compare values.
         if (compareResult < 0) node.left = add(value, node.left); // Add left.
-        else if (compareResult > 0) node.right = add(value, node.right); // Add right.
+        else node.right = add(value, node.right);
         return node; // Return current node.
     }
 
@@ -313,13 +312,13 @@ public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
         assert test.add(10);
         assert test.add(5);
         assert test.add(15);
-        assert !test.add(10);
+        assert test.add(10);
 
         // Test remove.
         assert test.remove(10);
         assert test.remove(5);
         assert !test.remove(100);
-        assert test.length() == 1;
+        assert test.length() == 2;
 
         System.out.println("BinarySearchTree passes all tests.");
     }

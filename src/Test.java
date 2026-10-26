@@ -73,6 +73,12 @@ public class Test {
         MinHeap.main(args);
         /*MinHeap assignment */
 
+        TreeSort.main(args);
+        /*TreeSort sorting algorithm */
+
+        HeapSort.main(args);
+        /*HeapSort sorting algorithm */
+
         return true;
     }
 }
