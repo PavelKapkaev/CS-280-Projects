@@ -24,8 +24,7 @@ public class BucketSort extends SortingAlgorithm<Integer> {
       if (array[i] < min) min = array[i]; // Update min.
       if (array[i] > max) max = array[i]; // Update max.
     }
-
-    // Create buckets for all numbers.
+    
     int[] buckets = new int[max - min + 1]; // Create an array of empty buckets.
 
     // Put numbers into the buckets.
