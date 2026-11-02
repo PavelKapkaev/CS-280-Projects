@@ -79,6 +79,8 @@ public class Test {
         HeapSort.main(args);
         /*HeapSort sorting algorithm */
 
+        BucketSort.main(args);
+        /*BucketSort sorting algorithm */
         return true;
     }
 }
