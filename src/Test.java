@@ -81,6 +81,12 @@ public class Test {
 
         BucketSort.main(args);
         /*BucketSort sorting algorithm */
+
+        TreeSet.main(args);
+        /*Tree set data structure */
+
+        VectorSet.main(args);
+        /*Vector set data structure */
         return true;
     }
 }

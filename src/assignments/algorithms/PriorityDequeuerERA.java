@@ -8,9 +8,9 @@ public class PriorityDequeuerERA {
    * @return created priority queue
    */
   private static PriorityDequeuer<Integer> PriorityDequeuer(int N) {
-    PriorityDequeuer<Integer> queue = new PriorityDequeuer<Integer>();
-    for (int i = 0; i < N; i++) {
-      queue.enqueue((int) (Math.random() * N) + 1);
+    PriorityDequeuer<Integer> queue = new PriorityDequeuer<Integer>(); // Empty queue.
+    for (int i = 0; i < N; i++) { // Add N values.
+      queue.enqueue((int) (Math.random() * N) + 1); // Random number between 1 and N.
     }
     return queue;
   }
