@@ -87,6 +87,9 @@ public class Test {
 
         VectorSet.main(args);
         /*Vector set data structure */
+        
+        HashSet.main(args);
+        /*Hash set data structure */
         return true;
     }
 }
