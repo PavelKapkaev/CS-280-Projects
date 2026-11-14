@@ -160,7 +160,7 @@ public class HashMap<K, V> implements Map<K, V> {
             assert map.contains(i * 10); // Check if keys exist.
             assert map.get(i * 10).equals("Value" + i); // Check if values correct.
         }
-        assert map.length() == 6; // Check siif map has 6 pairs.
+        assert map.length() == 6; // Check if map has 6 pairs.
         System.out.println("HashMap passes all tests.");
     }
 }
