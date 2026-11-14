@@ -26,9 +26,9 @@ public class HashSet<T> implements Set<T> {
    * @return bucket index
    */
   private int index(T value) {
-    int result = value.hashCode() % table.length; // Find index of bucket.
-    if (result < 0) result += table.length; // If negative index.
-    return result;
+    int bucket = value.hashCode() % table.length; // Find number of bucket. For ex. 25 % 10 = 5 means bucket 5.
+    if (bucket < 0) bucket += table.length; // Fix if negative number. If -5 then -5 + 10 = 5.
+    return bucket;
   }
 
   /**
@@ -73,7 +73,7 @@ public class HashSet<T> implements Set<T> {
 
   /**
    * Increase the table size if more than 5 in one bucket and move all values.
-   * Doubles the table so more ways to spread numbers in to buckets
+   * Doubles the table so more ways to spread numbers in to buckets.
    */
   private void rehash() {
     VectorSet<T>[] oldTable = table; // Save old table.

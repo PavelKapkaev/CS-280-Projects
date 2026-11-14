@@ -330,8 +330,8 @@ public class AVLTree<T extends Comparable<T>> implements Tree<T> {
      */
     private class Node {
         T data;
-        Node left;      // Left child.
-        Node right;     // Right child.
+        Node left;// Left child.
+        Node right;// Right child.
         int height; // Height of this node.
 
         /**
