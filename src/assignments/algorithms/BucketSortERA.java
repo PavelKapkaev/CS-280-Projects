@@ -20,7 +20,7 @@ public class BucketSortERA {
    * @param args arguments given to the program
    */
   public static void main(String[] args) {
-    for (int N = 10; N <= 1000000; N = N * 11 / 10 + 1) {
+    for (int N = 1000; N <= 2000000; N = N * 11 / 10 + 1) {
       Integer[] array = BucketSort(N);
       BucketSort sort = new BucketSort();
       long start = System.nanoTime();

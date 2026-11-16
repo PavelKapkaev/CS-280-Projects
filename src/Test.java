@@ -91,7 +91,7 @@ public class Test {
         HashSet.main(args);
         /*Hash set data structure */
 
-        HashSet.main(args);
+        HashMap.main(args);
         /*Hash map data structure */
 
         return true;

@@ -20,7 +20,7 @@ public class MergeSortERA {
    * @param args arguments given to the program
    */
   public static void main(String[] args) {
-    for (int N = 10; N <= 1000000; N = N * 11 / 10 + 1) {
+    for (int N = 1000; N <= 1000000; N = N * 11 / 10 + 1) {
       Integer[] array = MergeSort(N);
       MergeSort<Integer> sort = new MergeSort<Integer>();
       long start = System.nanoTime();

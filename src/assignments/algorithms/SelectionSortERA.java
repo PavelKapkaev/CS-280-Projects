@@ -20,7 +20,7 @@ public class SelectionSortERA {
    * @param args arguments given to the program
    */
   public static void main(String[] args) {
-    for (int N = 10; N <= 10000; N = N * 11 / 10 + 1) {
+    for (int N = 1000; N <= 40000; N = N * 11 / 10 + 1) {
       Integer[] array = SelectionSort(N);
       SelectionSort<Integer> sort = new SelectionSort<Integer>();
       long start = System.nanoTime();

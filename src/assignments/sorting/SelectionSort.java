@@ -1,7 +1,7 @@
 package assignments.sorting;
 
 /**
- * Insert each element one by one until the array is sorted.
+ * Find the smallest element and put it in the correct position.
  */
 public class SelectionSort<T extends Comparable<T>> extends SortingAlgorithm<T> {
   /**
