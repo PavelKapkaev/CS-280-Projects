@@ -42,7 +42,7 @@ public class AdjacencyMatrix {
      * 
      * Each vertex is represented by an integer.
      * 
-     * @return Set<Integer>
+     * @return a set of vertices
      */
     public Set<Integer> getVertices() {
         Set<Integer> vertices = new java.util.HashSet<>(); // Create empty set for verticies.
@@ -54,7 +54,7 @@ public class AdjacencyMatrix {
 
     /**
      * Return a set of Edges in this graph.
-     * @return Set<Edge>
+     * @return set of edges
      */
     public Set<Edge> getEdges() {
         Set<Edge> edges = new java.util.HashSet<>(); // Create empty set for edges.

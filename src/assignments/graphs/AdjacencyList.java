@@ -21,7 +21,7 @@ public class AdjacencyList {
         
         for (int i = 0; i < n; i ++) {
             this.edges.add(null); // Create a position in the list.
-            this.edges.set(i, new ArrayList<Integer>()); // Then replace null withempty list.
+            this.edges.set(i, new ArrayList<Integer>()); // Then replace null with empty list.
         }
 
         for (Edge e: E) {
@@ -42,7 +42,7 @@ public class AdjacencyList {
      * @param G the graph, as an AdjacencyMatrix
      */
     public AdjacencyList(AdjacencyMatrix G) {
-        this(G.getVertices(), G.getEdges()); // List with verticies and edges from G.
+        this(G.getVertices(), G.getEdges()); // List using verticies and edges from G.
     }
 
     /**
@@ -50,7 +50,7 @@ public class AdjacencyList {
      * 
      * Each vertex is represented by an integer.
      * 
-     * @return Set<Integer>
+     * @return set of verticies
      */
     public Set<Integer> getVertices() {
         Set<Integer> vertices = new java.util.HashSet<>(); // Empty set.
@@ -62,7 +62,7 @@ public class AdjacencyList {
 
     /**
      * Return a set of Edges in this graph.
-     * @return Set<Edge>
+     * @return a set of edges
      */
     public Set<Edge> getEdges() {
         Set<Edge> E = new java.util.HashSet<>(); 
